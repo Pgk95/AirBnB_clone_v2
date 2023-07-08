@@ -11,7 +11,7 @@ mkdir -p /data/web_static/releases/test/
 mkdir -p /data/web_static/shared/
 
 # Create a fake HTML file
-echo "Hello, PGK!" > /data/web_static/releases/test/index.html
+echo "Holberton School!" > /data/web_static/releases/test/index.html
 
 # Recreate the symbolic link
 rm -rf /data/web_static/current
