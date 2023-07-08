@@ -7,7 +7,7 @@ if ! command -v nginx &> /dev/null; then
 fi
 
 # Creates necessary directories
-mkdir -p /data/we_static/releases/test/
+mkdir -p /data/web_static/releases/test/
 mkdir -p /data/web_static/shared/
 
 # Create a fake HTML file
