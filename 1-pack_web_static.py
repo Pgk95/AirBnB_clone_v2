@@ -1,16 +1,14 @@
 #!/usr/bin/python3
 """Fab file for compressing to an archive"""
 
-
-from fabric2 import task
-from fabric.operations import local
+import os.path
+from fabric.api import task, local
 from datetime import datetime
 
-
 @task
-def do_pack(c):
+def do_pack():
     """Creates the folder (versions) if it doesn't exist"""
-    c.run("mkdir -p versions")
+    local("mkdir -p versions")
 
     """Creates the archive filename using current timestamp"""
     now = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -21,7 +19,7 @@ def do_pack(c):
 
     """Return the archive path if the archive is generated (successfullt)"""
     archive_path = "versions/{}".format(archive_filename)
-    if c.run("test -f {}".format(archive_path), warn=True).failed:
+    if not os.path.isfile(archive_path):
         return None
     else:
         return archive_path
