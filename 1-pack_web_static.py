@@ -17,8 +17,11 @@ def do_pack():
     """Creates the .tgz archive using tar command"""
     local("tar -czvf versions/{} web_static".format(archive_filename))
 
-    """Return the archive path if the archive is generated (successfullt)"""
+    """Return the archive path if the archive is generated (successfully)"""
     archive_path = "versions/{}".format(archive_filename)
+    file_size = os.path.getsize(archive_path)
+    print("web_static packed:", archive_path, "->Bytes", file_size)
+    local("chmod 664 {}".format(archive_path))
     if not os.path.isfile(archive_path):
         return None
     else:
