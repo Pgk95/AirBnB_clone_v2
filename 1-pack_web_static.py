@@ -7,7 +7,7 @@ from time import strftime
 
 
 def do_pack():
-    """generaate a .tgz archive"""
+    """generate a .tgz archive"""
     timenow = strftime("%Y%M%d%H%M%S")
     try:
         local("mkdir -p versions")
