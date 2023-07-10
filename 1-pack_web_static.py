@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-a Fabric script that creats an archive file from a "webstatic" folder
+a Fabric script that creats an archive file from "webstatic" folder
 """
 from fabric.api import local
 from time import strftime
