@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/', strict_flashes=False)
 def hello_hbnb():
     """returns the string (Hello, HBNB!)"""
-    return ('Hello, HBNB!')
+    return "Hello, HBNB!"
 
 
 if __name__ == "__main__":
